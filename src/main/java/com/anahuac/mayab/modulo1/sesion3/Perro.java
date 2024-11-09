@@ -56,7 +56,7 @@ public class Perro {
 	
 	// Metodos
 	public void ladrar() {
-		System.out.println("Me llamo " + this.nombre + " guau guau");
+		System.out.println("Me llamo " + this.nombre + ", mi dueño se llama " + this.nombreDueno + ", guau guau");
 	}
 	
 	
