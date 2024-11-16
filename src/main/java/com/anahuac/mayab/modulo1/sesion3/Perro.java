@@ -16,6 +16,13 @@ public class Perro {
 		this.edad = edad;
 		this.peso = peso;
 	}
+	public Perro(String raza, String nombre, int edad, String nombreDueno) {
+		this.raza = raza;
+		this.nombre = nombre;
+		this.edad = edad;
+		this.nombreDueno = nombreDueno;
+	}
+
 	// Getters y setters
 	public String getRaza() {
 		return raza;
@@ -58,6 +65,13 @@ public class Perro {
 	public void ladrar() {
 		System.out.println("Me llamo " + this.nombre + ", mi dueño se llama " + this.nombreDueno + ", guau guau");
 	}
+
+	@Override
+	public String toString() {
+		return "Raza=" + raza + ", tamano=" + tamano + ", nombre=" + nombre + ", nombreDueno=" + nombreDueno
+				+ ", edad=" + edad + ", peso=" + peso + "]";
+	}
+	
 	
 	
 

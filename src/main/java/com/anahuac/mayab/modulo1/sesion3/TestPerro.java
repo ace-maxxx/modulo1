@@ -2,7 +2,6 @@ package com.anahuac.mayab.modulo1.sesion3;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.random.RandomGenerator;
 
 public class TestPerro {
 
