@@ -1,73 +1,57 @@
 package com.anahuac.mayab.modulo1.sesion3;
-
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.HashMap;
+
 
 public class TestPerro {
 
 	public static void main(String[] args) {
-								
-		//Arreglo perros
-		Perro[] misPerros = new Perro[10];
 		
-		String[] nombresPerros = {"Combo", "Waska", "Brownie", "Duvalin", "Huesito", "Satan", "Max", "Manchas", "Chaneque", "Muppet"};
-		String[] nombresDuenos = {"Itzel", "Alex", "Alberto", "Flor", "Silvaine", "Roro", "Kikis", "Fer", "Clau", "Pili"};
+		Perro perro1 = new Perro("Labrador", "Grande", 15, "Max", "Monse", 5);
+		Perro perro2 = new Perro("Dalmata", "Mediano", 12, "Manchas", "Mau", 8);
+		Perro perro3 = new Perro("Bulldog", "Pequeño", 8, "Bongo", "Adriana", 1);
+		Perro perro4 = new Perro("Chihuahua", "Pequeño", 2, "Chiquis", "Fernando", 10);
+		Perro perro5 = new Perro("Salchicha", "Pequeño", 6, "Chito", "Vic", 3);
 		
-		for(int i = 0; i < 10; i++) {
-			misPerros[i] = new Perro();
-			misPerros[i].setNombre(nombresPerros[i]);			
+		// Arreglo simple
+		System.out.println("---------- Arreglo simple ----------");
+		Perro[] misPerros = {perro1, perro2, perro3, perro4, perro5};
+				
+		for(int i = 0; i < misPerros.length; i++) {
+			misPerros[i].ladrar();
 		}
 		
-		Random generador = new Random();
-		
-		for(int i=0; i < 10; i++) {
-			int aleatorio = generador.nextInt(10);
-			misPerros[i].setNombreDueno(nombresDuenos[aleatorio]);
-		}
-
-		for(int i = 0; i < 10; i++) {			
-			misPerros[i].ladrar();			
-		}
-		
-		// Array List de Perros
-		System.out.println("-------- ArrayList de Perros --------");
+		// Array List
+		System.out.println("---------- ArrayList ----------");
 		ArrayList<Perro> listaPerros = new ArrayList<Perro>();
 		
-		for(int i = 0; i < 10; i++) {
-			Perro perroTemporal = new Perro();
-			perroTemporal.setNombre(nombresPerros[i]);
-			int aleatorio = generador.nextInt(10);
-			perroTemporal.setNombreDueno(nombresDuenos[aleatorio]);
-			
-			listaPerros.add(perroTemporal);
-		}
-		for(int i = 0; i < 10; i++) {
-			listaPerros.get(i).ladrar();
+		listaPerros.add(perro1);
+		listaPerros.add(perro2);
+		listaPerros.add(perro3);
+		listaPerros.add(perro4);
+		listaPerros.add(perro5);
+		
+		for(Perro p : listaPerros) {
+			p.ladrar();
 		}
 		
-		//Busqueda de un perro
-		for(int i=0; i < listaPerros.size(); i++) {
-			String nombre = listaPerros.get(i).getNombre();
-			if(nombre == "Duvalin") {
-				listaPerros.get(i).setNombre("Shub Niggurath");
-				break;
-			}
-		}
-		System.out.println("-----Despues de cambiar el nombre------");
+		// HashMap
+		System.out.println("---------- HashMap ----------");
+		HashMap<Integer, Perro> mapPerros = new HashMap<>();
 		
-		for(int i = 0; i < 10; i++) {
-			listaPerros.get(i).ladrar();
-		}
+		mapPerros.put(perro1.getEdad(), perro1); // Para el Integer se usó la edad en vez de enteros del 1 al 5
+		mapPerros.put(perro2.getEdad(), perro2);
+		mapPerros.put(perro3.getEdad(), perro3);
+		mapPerros.put(perro4.getEdad(), perro4);
+		mapPerros.put(perro5.getEdad(), perro5);
 		
-		System.out.println("------Usando un HashMap ------");
-		
-		for(int i = 0; i < 10; i++) {
-			Perro perroTemporal = new Perro();
-			perroTemporal.setNombre(nombresPerros[i]);
-			int numeroAleatorio = generador.nextInt(nombresPerros.length);
-			perroTemporal.setNombreDueno(nombresDuenos[numeroAleatorio]);
+		for(Integer clave : mapPerros.keySet()) {
+			Perro p = mapPerros.get(clave);
+			p.ladrar();
 			
 		}
+		
+		
 	}
 
 }

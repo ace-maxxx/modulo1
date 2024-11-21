@@ -1,58 +1,61 @@
 package com.anahuac.mayab.modulo1.sesion3;
 
+
 public class Perro {
-	private String raza, tamano, nombre, nombreDueno;
-	private int edad;
+	//variables de instancia o atributos
+	private String raza;
+	private String tamanio;
 	private double peso;
+	private String nombre;
+	private String nombreDuenio;
+	private int edad;
 	
-	public Perro() {}
-	
-	public Perro(String raza, String tamano, String nombre, String nombreDueno, int edad, double peso) {
-		super();
+
+    public Perro() {}
+    
+	public Perro(String raza, String tamanio, double peso, String nombre, String nombreDuenio, int edad) {
 		this.raza = raza;
-		this.tamano = tamano;
+		this.tamanio = tamanio;
+		this.peso = peso;
 		this.nombre = nombre;
-		this.nombreDueno = nombreDueno;
+		this.nombreDuenio = nombreDuenio;
 		this.edad = edad;
+	}
+	
+	public Perro(String raza, String nombre, int edad, String nombreDuenio) {
+		this.raza = raza;
+		this.nombre = nombre;
+		this.nombreDuenio = nombreDuenio;
+		this.edad = edad;
+	}
+	
+	public Perro(String raza, String nombre, double peso, String nombreDuenio) {
+		this.raza = raza;
+		this.nombre = nombre;
+		this.nombreDuenio = nombreDuenio;
 		this.peso = peso;
 	}
-	public Perro(String raza, String nombre, int edad, String nombreDueno) {
+	
+	public Perro(String raza, String nombre, String nombreDuenio) {
 		this.raza = raza;
 		this.nombre = nombre;
-		this.edad = edad;
-		this.nombreDueno = nombreDueno;
+		this.nombreDuenio = nombreDuenio;
+	
 	}
+	
 
-	// Getters y setters
+
 	public String getRaza() {
 		return raza;
 	}
 	public void setRaza(String raza) {
 		this.raza = raza;
 	}
-	public String getTamano() {
-		return tamano;
+	public String getTamanio() {
+		return tamanio;
 	}
-	public void setTamano(String tamano) {
-		this.tamano = tamano;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getNombreDueno() {
-		return nombreDueno;
-	}
-	public void setNombreDueno(String nombreDueno) {
-		this.nombreDueno = nombreDueno;
-	}
-	public int getEdad() {
-		return edad;
-	}
-	public void setEdad(int edad) {
-		this.edad = edad;
+	public void setTamanio(String tamanio) {
+		this.tamanio = tamanio;
 	}
 	public double getPeso() {
 		return peso;
@@ -60,19 +63,35 @@ public class Perro {
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getNombreDuenio() {
+		return nombreDuenio;
+	}
+	public void setNombreDuenio(String n) {
+		nombreDuenio = n;
+	}
+	public int getEdad() {
+		return edad;
+	}
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
 	
-	// Metodos
+	//Métodos / ¿Que hace?
 	public void ladrar() {
-		System.out.println("Me llamo " + this.nombre + ", mi dueño se llama " + this.nombreDueno + ", guau guau");
+		System.out.println("Me llamo " + this.nombre + ", mi dueño es " + this.nombreDuenio +  " y estoy ladrando guau guau");
 	}
 
 	@Override
 	public String toString() {
-		return "Raza=" + raza + ", tamano=" + tamano + ", nombre=" + nombre + ", nombreDueno=" + nombreDueno
-				+ ", edad=" + edad + ", peso=" + peso + "]";
-	}
+		return "Nombre=" + nombre +" [raza=" + raza + ", tamaño=" + tamanio + ", peso=" + peso 
+				+ ", nombreDuenio=" + nombreDuenio + ", edad=" + edad + "]";
+	}	
 	
 	
-	
-
 }
